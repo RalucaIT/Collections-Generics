@@ -10,9 +10,10 @@ public class Generics {
 //        Integer[] inputArray = {8, 11, 4, 9}; // schimb primele 2 pozitii: 0 cu 1 {8, 11}. Asa declar un Array de Integers, Vectorii.
 //        printArray(inputArray, 0, 1);
 //        System.out.println(checkPrime(11));
-       List<Integer> array = Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9); // aici poate primi chiar si Strings, Int, Char, etc.
+        List<Integer> array = Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9); // aici poate primi chiar si Strings, Int, Char, etc.
         System.out.println(primeNumbersFromList(array));
     }
+
     public static <T> void printArray(T[] inputArray, int a, int b) { // aici primesc pozitiile intre care tre' sa fac switch.
         T aux; // o sa am un array si interschimb elements de pe pozitiile respective cu AUX.
         // aux stocheaza valoarea de la pozitia a. inputArray[a]
@@ -24,39 +25,35 @@ public class Generics {
             System.out.println(type);
         }
     }
-public static boolean checkPrime (int n) { // 5
-        for (int i = 2; i < n/2; i++) {
+
+    public static boolean checkPrime(int n) { // 5
+        for (int i = 2; i < n / 2; i++) {
             if (n % i != 0) {
                 return true;
             }
         }
-       return false;
-}
-public static <E> int primeNumbersFromList (List<E> arrayList) {
+        return false;
+    }
+
+    public static <E> int primeNumbersFromList(List<E> arrayList) {
         int count = 0;
-        /* for (int i = 0; i < arrayList.size(); i++) { // integer Method
-            if (checkPrime(arrayList.get(i))) { // aici apeleaza Metoda de mai sus.
-                count++;
+
+        try { // pt exceptii
+            for (E element : arrayList) { // Generic Method
+                if (checkPrime((Integer) element)) {
+                    count++;
+                }
+                if ((Integer) element == 2) {
+                    count++;
+                }
             }
-            if (arrayList.get(i) == 2) {
-                count++;
-            }
-        } return count; */
-    try { // pt exceptii
-        for (E element : arrayList) { // Generic Method
-            if(checkPrime((Integer)element)) {
-                count++;
-            }
-            if ((Integer)element == 2) {
-                count++;
-            }
+            System.out.println("Print the Number of Prime Numbers from a list, counted with Generic Method:");
+            return count;
+        } catch (Exception e) {
+            System.out.println("The input is incorrect.");
         }
-        System.out.println("Print the Number of Prime Numbers from a list, counted with Generic Method:");
         return count;
-    } catch (Exception e) {
-        System.out.println("The input is incorrect.");
-    } return count;
-}
+    }
 }
 
 
