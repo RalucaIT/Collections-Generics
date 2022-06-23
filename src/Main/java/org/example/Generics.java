@@ -1,7 +1,7 @@
 package org.example;
 
-import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 public class Generics {
 
