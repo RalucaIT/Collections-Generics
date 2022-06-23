@@ -12,6 +12,7 @@ public class Generics {
 //        System.out.println(checkPrime(11));
         List<Integer> array = Arrays.asList(2, 3, 4, 5, 6, 7, 8, 9); // aici poate primi chiar si Strings, Int, Char, etc.
         System.out.println(primeNumbersFromList(array));
+        int i = 5;
     }
 
     public static <T> void printArray(T[] inputArray, int a, int b) { // aici primesc pozitiile intre care tre' sa fac switch.

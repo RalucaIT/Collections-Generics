@@ -7,8 +7,7 @@ class CollectionsHomework {
     public static void main(String[] args) {
 
 /*
-● 1) Make a List, populate it with numbers from 1 to 10 and then iterate
-through them and print only even numbers;
+● 1) Make a List, populate it with numbers from 1 to 10 and then iterate through them and print only even numbers;
  */
         List<Integer> intList = new ArrayList<>();
         for (int i = 1; i <= 10; ++i) {
@@ -67,7 +66,7 @@ print only the keys that have a value greater than 10.
 ● 4.4) Create a Map having the resulted set as the keySet and the list as values for each key. // sout = 1=7  2=5  4=4  5=2  7=1.
          */
 
-        List<Integer> entireNumbersList = Arrays.asList(new Integer[]{7, 4, 5, 2, 1, 2, 4, 1}); // asa adaugam elemente in Array direct din declaratie
+        List<Integer> entireNumbersList = Arrays.asList(7, 4, 5, 2, 1, 2, 4, 1); // asa adaugam elemente in Array direct din declaratie
         System.out.println("Print The Entire Numbers' List:");
         for (Integer everyNumberOfTheList : entireNumbersList) {
             System.out.println(everyNumberOfTheList);
@@ -75,8 +74,8 @@ print only the keys that have a value greater than 10.
         System.out.println();
 
 
-        HashSet<Integer> setWithoutDuplicates = new HashSet<Integer>(entireNumbersList); //  din lista de Arrays (entireNumbersList) imi creeaza un HashSet => si cum NU accepta duplicate, le elimina.
-        List<Integer> listWithoutDuplicates = new ArrayList<Integer>(setWithoutDuplicates);
+        HashSet<Integer> setWithoutDuplicates = new HashSet<>(entireNumbersList); //  din lista de Arrays (entireNumbersList) imi creeaza un HashSet => si cum NU accepta duplicate, le elimina.
+        List<Integer> listWithoutDuplicates = new ArrayList<>(setWithoutDuplicates);
         System.out.println("Print The Numbers' List Without Duplicates:");
         for (Integer listWithoutDuplicate : listWithoutDuplicates) {
             System.out.println(listWithoutDuplicate);
@@ -96,7 +95,7 @@ print only the keys that have a value greater than 10.
         System.out.println();
 
 
-        Set<String> setOfStrings = new HashSet<String>(); // declar un set de tip String
+        Set<String> setOfStrings = new HashSet<>(); // declar un set de tip String
         for (Integer element : listWithoutDuplicates) {
             // setOfStrings.add(Integer.toString(element)) // la setul de string-uri ADAUG elementul convertit in String.
 
